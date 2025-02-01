@@ -11,5 +11,5 @@ A modern, geometric, slab serif font inspired by Hideo Sato's "Cinema Font"
 
 
 ## Download
-[Latest release (v0.1.0)](https://github.com/samuelquiros-design/Captioned/releases/download/v0.2.0/Captioned-Regular.otf)
+[Latest release](https://github.com/samuelquiros-design/Captioned/releases/download/v0.2.0/Captioned-Regular.otf)
 <br/><br/>
