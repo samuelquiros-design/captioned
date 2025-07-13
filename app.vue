@@ -2,9 +2,24 @@
 import { ref } from 'vue'
 
 const is_menu_open = ref(false)
+const touched_once = ref(false)
 
 function toggle_menu() {
   is_menu_open.value = !is_menu_open.value
+}
+
+function toggle_menu_event(e) {
+  if (e.type === 'touchend') {
+    touched_once.value = true
+    toggle_menu()
+    e.preventDefault()
+  } else if (e.type === 'click') {
+    if (touched_once.value) {
+      touched_once.value = false
+      return
+    }
+    toggle_menu()
+  }
 }
 
 function reset_scroll() {
@@ -25,13 +40,13 @@ function reset_scroll() {
   <div class="content_wrapper">
     <div class="overlay" :class="{ 'overlay_visible': is_menu_open }" @click="is_menu_open = false"></div>
 
-    <button class="menu_toggle" @click="toggle_menu">
+    <button class="menu_toggle" @click="toggle_menu_event" @touchend="toggle_menu_event">
       <span class="material-symbols-rounded">
         {{ is_menu_open ? 'close' : 'menu' }}
       </span>
     </button>
 
-    <button class="scroll_reset" @click="reset_scroll" aria-label="Reset scroll">
+    <button class="scroll_reset" @click="reset_scroll">
       <span class="material-symbols-rounded">arrow_upward</span>
     </button>
 
@@ -117,6 +132,7 @@ function reset_scroll() {
     border: 2px solid $color_dark;
     border-radius: 1.5rem;
     cursor: pointer;
+    user-select: none;
 
     .material-symbols-rounded {
       font-size: 2rem;
@@ -155,6 +171,7 @@ function reset_scroll() {
     border: 2px solid $color_dark;
     border-radius: 1.5rem;
     cursor: pointer;
+    user-select: none;
 
     .material-symbols-rounded {
       font-size: 2rem;
