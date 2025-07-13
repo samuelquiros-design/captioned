@@ -109,6 +109,7 @@ onMounted(() => {
             height: 16rem;
             line-height: 16rem;
             text-align: center;
+            user-select: none;
         }
     }
 
@@ -147,6 +148,7 @@ onMounted(() => {
                     aspect-ratio: 1 / 1;
                     font-size: 3rem;
                     text-align: center;
+                    user-select: none;
                     cursor: pointer;
 
                     &:hover {
