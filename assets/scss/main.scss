@@ -1,0 +1,37 @@
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 100%;
+    font-family: "SUSE";
+
+    body {
+        main {
+            h1 {
+                font-size: clamp(1.5rem, 2.5vw, 2rem);
+                font-weight: 600;
+            }
+
+            h2 {
+                font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+                font-weight: 500;
+            }
+
+            h3 {
+                font-size: clamp(1rem, 2.5vw, 1.25rem);
+                font-weight: 400;
+                text-decoration: underline;
+            }
+
+            a {
+                text-decoration: underline;
+                text-decoration-style: dashed;
+
+                &:hover {
+                    text-decoration-style: solid;
+                }
+            }
+        }
+
+    }
+}
