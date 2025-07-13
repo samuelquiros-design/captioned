@@ -33,7 +33,7 @@ function focus_input() {
         <div class="tester_input">
             <div class="tester_form" :class="{ typing: user_input, focused: is_focused }" @click="focus_input">
                 <span class="material-symbols-rounded">stylus</span>
-                <input id="user_input" ref="input_ref" v-model="user_input" placeholder="Escribe tu texto"
+                <input id="user_input" ref="input_ref" v-model="user_input" placeholder="Write here"
                     @focus="is_focused = true" @blur="is_focused = false" />
             </div>
             <div class="tester_slider">
