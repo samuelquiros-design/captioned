@@ -84,13 +84,17 @@ onMounted(() => {
     width: 100%;
     gap: 4rem;
     padding: 0 4rem;
+    overflow-y: auto;
 
     .glyph_preview {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40%;
-        height: 100%;
+        position: fixed;
+        top: 6rem;
+        left: 2rem;
+        width: 30vw;
+        height: calc(100vh - 6rem);
         font-size: 20rem;
         color: $color_dark;
         text-align: center;
@@ -112,10 +116,11 @@ onMounted(() => {
         display: flex;
         flex-direction: column;
         gap: 6rem;
-        padding: 2rem 0;
-        width: 60%;
-        height: 100%;
-        overflow: auto;
+        padding: 2rem 4rem;
+        margin-left: 30vw;
+        width: 70vw;
+        border-left: 2px solid transparent;
+        border-left: 2px solid $color_dark;
 
         .glyph_range_section {
 
@@ -128,10 +133,8 @@ onMounted(() => {
 
             .glyph_map {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, 4rem);
+                grid-template-columns: repeat(auto-fit, minmax(clamp(3rem, 10vw, 4rem), 1fr));
                 justify-content: center;
-                gap: 1rem;
-                overflow-x: hidden;
                 font-family: 'Captioned', sans-serif;
                 color: $color_medium;
 
@@ -140,11 +143,10 @@ onMounted(() => {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    width: 4rem;
-                    height: 4rem;
+                    width: auto;
+                    aspect-ratio: 1 / 1;
                     font-size: 3rem;
                     text-align: center;
-                    border-radius: 0.5rem;
                     cursor: pointer;
 
                     &:hover {
@@ -153,6 +155,7 @@ onMounted(() => {
                     }
 
                     &.selected {
+                        border: 2px solid $color_dark;
                         background-color: $color_dark;
                         color: $color_light;
                     }
@@ -170,7 +173,8 @@ onMounted(() => {
         gap: 2rem;
 
         .glyph_preview {
-            position: fixed;
+            top: 0;
+            left: 0;
             width: 100vw;
             height: 25vh;
             font-size: 8rem;
@@ -189,7 +193,10 @@ onMounted(() => {
         .glyph_ranges {
             width: 100%;
             gap: 4rem;
+            padding: 2rem 0;
+            margin: 0;
             margin-top: 25vh;
+            border: none;
 
             .glyph_range_section {
 
@@ -199,11 +206,8 @@ onMounted(() => {
                 }
 
                 .glyph_map {
-                    gap: 0.5rem;
 
                     .glyph_cell {
-                        width: 3rem;
-                        height: 3rem;
                         font-size: 2rem;
                     }
                 }

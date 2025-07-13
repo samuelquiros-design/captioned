@@ -58,6 +58,7 @@ function focus_input() {
     width: 100%;
     padding: 2rem 4rem;
     gap: 4rem;
+    overflow-y: auto;
 
     .tester_input {
         display: flex;
@@ -171,7 +172,9 @@ function focus_input() {
 
     .tester_preview {
         display: flex;
-        overflow: auto;
+        width: 100%;
+        padding: 2rem 3rem;
+        border: 2px solid $color_dark;
 
         .tester_output {
             font-family: 'Captioned';
@@ -186,11 +189,15 @@ function focus_input() {
 
         .tester_input {
             flex-direction: column;
-            align-items: start;
+            align-items: end;
 
             .tester_form {
                 width: 100%;
             }
+        }
+
+        .tester_preview {
+            padding: 1rem 1.5rem;
         }
     }
 }

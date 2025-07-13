@@ -122,7 +122,17 @@ function reset_scroll() {
       font-size: 2rem;
     }
 
-    &:hover {
+    @media (hover: hover) {
+      &:hover {
+        border: 4px solid $color_dark;
+
+        .material-symbols-rounded {
+          font-weight: 600;
+        }
+      }
+    }
+
+    &:active {
       border: 4px solid $color_dark;
 
       .material-symbols-rounded {
@@ -150,7 +160,17 @@ function reset_scroll() {
       font-size: 2rem;
     }
 
-    &:hover {
+    @media (hover: hover) {
+      &:hover {
+        border: 4px solid $color_dark;
+
+        .material-symbols-rounded {
+          font-weight: 600;
+        }
+      }
+    }
+
+    &:active {
       border: 4px solid $color_dark;
 
       .material-symbols-rounded {
@@ -355,13 +375,12 @@ function reset_scroll() {
       background-color: $color_light;
       position: fixed;
       top: auto;
-      bottom: 0;
+      bottom: -100%;
       border-top: 2px solid $color_dark;
-      transform: translateY(100%);
-      transition: transform 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
 
       &.open {
-        transform: translateY(0%);
+        bottom: 0;
       }
 
       .header_single {
