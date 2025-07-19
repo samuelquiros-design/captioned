@@ -769,4 +769,10 @@
         }
     }
 }
+
+@supports (-webkit-touch-callout: none) {
+    .content {
+        padding-bottom: 8rem;
+    }
+}
 </style>

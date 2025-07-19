@@ -217,4 +217,12 @@ onMounted(() => {
         }
     }
 }
+
+@supports (-webkit-touch-callout: none) {
+    .content {
+        .glyph_ranges {
+            padding-bottom: 8rem;
+        }
+    }
+}
 </style>

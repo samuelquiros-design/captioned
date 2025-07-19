@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const is_menu_open = ref(false)
+const splash_visible = ref(true)
 
 function toggle_menu() {
   is_menu_open.value = !is_menu_open.value
@@ -19,11 +20,21 @@ function reset_scroll() {
     }
   })
 }
+
+onMounted(() => {
+  setTimeout(() => {
+    splash_visible.value = false
+  }, 2000)
+})
 </script>
 
 <template>
   <div class="content_wrapper">
-    <div class="overlay" :class="{ 'overlay_visible': is_menu_open }" @click="is_menu_open = false"></div>
+    <div class="splash" v-if="splash_visible">
+      <span>Captioned</span>
+    </div>
+
+    <div :class="['overlay', { menu_open: is_menu_open }]" @click="is_menu_open = false"></div>
 
     <button class="menu_toggle" @click="toggle_menu">
       <span class="material-symbols-rounded">
@@ -35,7 +46,7 @@ function reset_scroll() {
       <span class="material-symbols-rounded">arrow_upward</span>
     </button>
 
-    <header :class="['header', { open: is_menu_open }]">
+    <header :class="['header', { menu_open: is_menu_open }]">
       <div class="header_single">
         <NuxtLink to="/" class="header_title" @click="is_menu_open = false">Captioned</NuxtLink>
         <ul class="header_nav" @click="is_menu_open = false">
@@ -87,6 +98,67 @@ function reset_scroll() {
   color: $color_dark;
   background-color: $color_light;
 
+  .splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color_light;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    user-select: none;
+    animation: splash_background 2s ease-in-out forwards;
+    animation-delay: 0s;
+
+    span {
+      font-family: 'Captioned';
+      font-size: clamp(4rem, 12.5vw, 8rem);
+      animation: splash_text 2s ease-in-out forwards;
+      animation-delay: 0s;
+    }
+  }
+
+  @keyframes splash_text {
+    0% {
+      opacity: 1;
+    }
+
+    60% {
+      opacity: 1;
+
+    }
+
+    80% {
+      opacity: 0;
+
+    }
+
+    100% {
+      opacity: 0;
+
+    }
+  }
+
+  @keyframes splash_background {
+    0% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+
   .overlay {
     position: fixed;
     inset: 0;
@@ -97,7 +169,7 @@ function reset_scroll() {
     z-index: 2;
     cursor: default;
 
-    &.overlay_visible {
+    &.menu_open {
       opacity: 0.25;
       pointer-events: auto;
     }
@@ -367,6 +439,7 @@ function reset_scroll() {
   }
 
   @media (max-width: 768px) {
+
     .menu_toggle {
       display: flex;
     }
@@ -374,6 +447,7 @@ function reset_scroll() {
     .header {
       width: 100vw;
       height: fit-content;
+      min-height: 65vh;
       background-color: $color_light;
       position: fixed;
       top: auto;
@@ -381,7 +455,7 @@ function reset_scroll() {
       border-top: 2px solid $color_dark;
       transition: 0.3s ease-in-out;
 
-      &.open {
+      &.menu_open {
         bottom: 0;
       }
 
