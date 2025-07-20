@@ -63,7 +63,7 @@ onMounted(() => {
             <NuxtLink to="/license">License</NuxtLink>
           </li>
         </ul>
-        <a href="https://github.com/samuelquiros-design/captioned/releases/latest/download/Captioned-Regular.otf"
+        <a href="https://github.com/samuelquiros-design/captioned/raw/refs/heads/main/assets/fonts/Captioned-Regular.otf"
           class="header_download">
           <span class="material-symbols-rounded download_icon">download</span>
           <span class="download_text">Download</span>
