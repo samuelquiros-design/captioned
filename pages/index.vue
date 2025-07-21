@@ -5,7 +5,8 @@
         <section class="about">
             <h1 class="about_title">About</h1>
             <div class="about_content">
-                <p>"Captioned" is a modern, geometric, slab serif font inspired by Hideo Sato's "Cinema Font". It was
+                <p>"Captioned" is a modern, geometric, slab serif font inspired by Hideo Sato's <em>Cinema Font</em>. It
+                    was
                     created as a personal project, born out of curiosity about typeface design.</p>
                 <p>The character ranges currently supported are <a href="https://www.unicode.org/charts/PDF/U0000.pdf"
                         target="_blank">Basic Latin</a> and <a href="https://www.unicode.org/charts/PDF/U0080.pdf"
