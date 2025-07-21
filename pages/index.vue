@@ -6,11 +6,11 @@
             <h1 class="about_title">About</h1>
             <div class="about_content">
                 <p>"Captioned" is a modern, geometric, slab serif font inspired by Hideo Sato's "Cinema Font". It was
-                    created as a personal project born out of curiosity about typefaces design.</p>
+                    created as a personal project, born out of curiosity about typeface design.</p>
                 <p>The character ranges currently supported are <a href="https://www.unicode.org/charts/PDF/U0000.pdf"
                         target="_blank">Basic Latin</a> and <a href="https://www.unicode.org/charts/PDF/U0080.pdf"
-                        target="_blank">Latin-1 Supplement</a>, making "Captioned" a basic but versatile font.</p>
-                <p>You can check the <a href="https://github.com/samuelquiros-design/captioned" target="_blank">Github
+                        target="_blank">Latin-1 Supplement</a>, making "Captioned" a simple yet versatile font.</p>
+                <p>You can check the <a href="https://github.com/samuelquiros-design/captioned" target="_blank">GitHub
                         repository</a> to report issues or contribute.</p>
             </div>
         </section>
