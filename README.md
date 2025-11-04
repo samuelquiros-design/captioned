@@ -8,6 +8,6 @@
 
 <br/><br/>
 
-<a href="https://github.com/samuelquiros-design/captioned/raw/refs/heads/app/main/assets/fonts/Captioned-Regular.otf">
+<a href="https://github.com/samuelquiros-design/captioned/raw/refs/heads/main/app/assets/fonts/Captioned-Regular.otf">
   <img width="1819" height="449" alt="Download" src="https://github.com/user-attachments/assets/73b8c7e1-cc9d-4e69-9acf-d89b5cf7a429"/>
 <a/>
